@@ -9,6 +9,7 @@ class BaseModel:
     """ first class   """
 
     def __init__(self, *args, **kwargs):
+        """jkhlkhlkhglghlkg"""
         tf = '%Y-%m-%dT%H:%M:%S.%f'
         self.id = str(uuid.uuid4())
         self.created_at = datetime.now()
@@ -25,6 +26,7 @@ class BaseModel:
             models.storage.new(self)
 
     def to_dict(self):
+        """dictionnary"""
         my_dict = dict(self.__dict__)
         my_dict['__class__'] = self.__class__.__name__
         my_dict['created_at'] = self.created_at.isoformat()
@@ -32,9 +34,11 @@ class BaseModel:
         return (my_dict)
 
     def __str__(self):
+        """return of class"""
         return "[{}] ({}) {}".format(__class__.__name__, self.id,
                                      self.__dict__)
 
     def save(self):
+        """save method"""
         self.updated_at = datetime.now()
         models.storage.save()
