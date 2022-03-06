@@ -7,6 +7,7 @@ from models.base_model import BaseModel
 
 class HBNBCommand(cmd.Cmd):
     """hbnb command"""
+
     prompt = "(hbnb) "
     classes = ["BaseModel"]
     @classmethod
